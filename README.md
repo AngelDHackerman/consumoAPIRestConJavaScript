@@ -47,6 +47,11 @@ Ejemplos:
 - /images/gatito35?format=png  
 
 
-
-
 Leer la **documentacion** de la API a usar es siempre util
+
+
+## Agregando query parameters: 
+
+**limit** y **page** las usaremos en los ejercicios, para mas infor ver la documentacion de la API.
+
+https://docs.thecatapi.com/pagination
