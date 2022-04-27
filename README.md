@@ -32,19 +32,19 @@ Ejemplos:
 
 > Traenos las **primeras 5 razas** (breeds) de la **pagina 2**.
 
-/breeds?limit=5&page=2
+- /breeds?limit=5&page=2
 
 > Traenos lo que este en la **categoria 'fun'**.
 
-/categories?search=fun       
+- /categories?search=fun       
 
 > Traenos solo los de la **categoria 3**.
 
-/images?category=3           
+- /images?category=3           
 
 > Traenos las del **gatito35 pero solo formato png**.
 
-/images/gatito35?format=png  
+- /images/gatito35?format=png  
 
 
 
