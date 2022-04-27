@@ -1,6 +1,8 @@
 // const API_URL = 'https://api.thecatapi.com/v1/images/search'; // * endpoint SIN query parameter 
 
-const API_URL = 'https://api.thecatapi.com/v1/images/search?limit=3'    // ? query parameter agregado
+// ? query parameter agregado:
+// ? api key: 2e0a73a6-4887-496f-bcb9-294a0e42b9d3
+const API_URL = 'https://api.thecatapi.com/v1/images/search?limit=3&api_key=2e0a73a6-4887-496f-bcb9-294a0e42b9d3'    
 
 
 const  reload = async () => { 

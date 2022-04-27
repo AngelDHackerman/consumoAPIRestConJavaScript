@@ -55,3 +55,24 @@ Leer la **documentacion** de la API a usar es siempre util
 **limit** y **page** las usaremos en los ejercicios, para mas infor ver la documentacion de la API.
 
 https://docs.thecatapi.com/pagination
+
+
+## HTTP Status Codes: 
+
+**Codigos en 2xx** (los docientos), significa que **todo va bien**.
+
+**Codigos en 3xx** (los trecientos), significa **redireccion, o necesitamos pagar $$$**.
+
+**Codigos en 4xx** (los cuatrocientos), signfica **frontEnd hizo una solicitud incorrecta**.
+
+**Codigos en 5xx** (los quinientos), significa **backEnd fallo**. 
+
+
+## API keys: 
+
+Es una de las formas en las que **el backEnd puede identificar quien esta haciendo cada solicitud**
+Hay 2 datos importantes: 
+
+**Autenticacion:** consiste en identificar quien es cada quien. 
+
+**Autorization:** es la que nos dice que permisos tiene cada quien. 
