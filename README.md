@@ -76,3 +76,7 @@ Hay 2 datos importantes:
 **Autenticacion:** consiste en identificar quien es cada quien. 
 
 **Autorization:** es la que nos dice que permisos tiene cada quien. 
+
+
+# Proyecto de la clase: 
+
