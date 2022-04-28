@@ -39,14 +39,32 @@ const  loadFavoritesMichis = async () => {
 
   if (res.status !== 200) { 
     spanError.innerHTML = `hubo un error ${res.status} ${data.message}`
-    
+
   }
   
 }
 
+const saveFavoriteMichis = async () => { 
+  const res = await fetch(API_URL_FAVORITES, {   // ! Asi se crea una solicitud de post
+    method: 'POST',
+    headers: { 
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ 
+      image_id: 'dje',
+    })
+  });
 
+  const data = await res.json();
+
+  console.log('Save with POST');
+  console.log(res);
+
+  if (res.status !== 200) { 
+    spanError.innerHTML = `hubo un error ${res.status} ${data.message}`
+  }
+}
 
 
 loadRandomMichis();
 loadFavoritesMichis();
-
