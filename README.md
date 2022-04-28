@@ -80,3 +80,13 @@ Hay 2 datos importantes:
 
 # Proyecto de la clase: 
 
+## Que son los metodos HTTP:
+
+Son la forma en la que **el frontEnd le puede dar un aviso al backEnd** del tipo de solicitud que vamos a hacer. 
+
+*Metodos HTTP* 
+
+- GET             (metodo por *defecto*).
+- POST            (Crea *nueva informacion* "posterar informacion en la Api)
+- PUT y PATCH     (*Editar* informacion ya creada, PUT edita todo, PATCH solo cosas pequeñas)
+- DELETE          (*Elimina* la informacion).
