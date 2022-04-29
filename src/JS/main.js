@@ -23,13 +23,22 @@ const res = await fetch(API_URL_RANDOM)   // * fetch devuelve una promesa, await
 
     const img1 = document.querySelector('#img1');
     const img2 = document.querySelector('#img2');
+    const btn1 = document.querySelector('#btn1');
+    const btn2 = document.querySelector('#btn2');
     
     img1.src = data[0].url;
     img2.src = data[1].url;
+
+      // * Pasandole los id de las imagenes a los botones
+
+    btn1.onclick = () => saveFavoriteMichi(data[0].id);
+    btn2.onclick = () => saveFavoriteMichi(data[1].id);
   }
   
   console.log(data[0].url);
 }
+
+      // ! Aqui agregamos los catos a favoritos
 
 const  loadFavoritesMichis = async () => { 
   
@@ -41,14 +50,28 @@ const  loadFavoritesMichis = async () => {
     spanError.innerHTML = `hubo un error ${res.status} ${data.message}`
 
   } else { 
-    data.forEach(michi => { 
+    data.forEach(michi => {     // ? Estamos recorriendo el array de DATA y eso se queda guardado en michi
+
+      // * Seleccionando donde vamos a incrustar el codigo.
+
+      const section = document.querySelector('#favoritesMinchos');
+
+      // * Creando los elementos desde JS 
+
       const article = document.createElement('article');
       const img = document.createElement('img');
       const btn = document.createElement('button');
       const btnText = document.createTextNode('Sacar al mich de favoritos');
-      
 
-      // michi.image.url
+      // * Formando nuestro html desde JS
+
+      btn.appendChild(btnText);
+      img.src = michi.image.url;
+      img.width = 150;
+      article.appendChild(img);
+      article.appendChild(btn);
+      section.appendChild(article);
+
     })
   }
   
@@ -56,14 +79,14 @@ const  loadFavoritesMichis = async () => {
 
       // ! Asi se crea una solicitud de post:
 
-const saveFavoriteMichis = async () => { 
+const saveFavoriteMichi = async (id) => { 
   const res = await fetch(API_URL_FAVORITES, {   
     method: 'POST',
     headers: { 
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({ 
-      image_id: 'dje',
+      image_id: id,
     })
   });
 
