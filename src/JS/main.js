@@ -40,12 +40,24 @@ const  loadFavoritesMichis = async () => {
   if (res.status !== 200) { 
     spanError.innerHTML = `hubo un error ${res.status} ${data.message}`
 
+  } else { 
+    data.forEach(michi => { 
+      const article = document.createElement('article');
+      const img = document.createElement('img');
+      const btn = document.createElement('button');
+      const btnText = document.createTextNode('Sacar al mich de favoritos');
+      
+
+      // michi.image.url
+    })
   }
   
 }
 
+      // ! Asi se crea una solicitud de post:
+
 const saveFavoriteMichis = async () => { 
-  const res = await fetch(API_URL_FAVORITES, {   // ! Asi se crea una solicitud de post
+  const res = await fetch(API_URL_FAVORITES, {   
     method: 'POST',
     headers: { 
       'Content-Type': 'application/json'
@@ -55,7 +67,7 @@ const saveFavoriteMichis = async () => {
     })
   });
 
-  const data = await res.json();
+  const data = await res.json(); // ? Aqui parseamos el objeto res a un JSON que podemos entender en el frontEnd.
 
   console.log('Save with POST');
   console.log(res);
