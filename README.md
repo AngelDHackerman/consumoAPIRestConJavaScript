@@ -99,3 +99,73 @@ Son la forma en la que **el frontEnd le puede dar un aviso al backEnd** del tipo
 - Cookies 
 - Location 
 - Etc... 
+
+
+**Content Type** define el 'idioma' que el front y el back end van a hablar entre ellos. 
+
+### tipos de Content Types: 
+
+- application (este es el mas comun)
+- audio 
+- image 
+- multipart 
+- text 
+- video 
+- vnd 
+- etc... 
+
+### tipos de application: 
+
+- application/json
+- application/xml
+- application/zip 
+- **application/x-www-form-urlencoded**
+
+
+#### Audio: 
+
+- audio/mpeg 
+- audio/x-ms-wma
+- audio/vnd.rn-realaudio
+- audio/x-wav
+
+
+#### Image: 
+
+- image/gif 
+- image/jpeg
+- image/png 
+- image/x-icon
+- image/svg+xml
+
+
+#### multipar: 
+
+- multipart/mixed
+- multipart/alternative 
+- multipart/related 
+- **multipart/form-data**
+
+
+#### Text: 
+
+- text/css
+- text/csv
+- text/html
+- text/plain
+- text/xml
+
+
+#### Video: 
+
+- video/mpeg
+- video/mp4
+- video/quicktime
+- video/webm
+
+
+#### VND: 
+
+- application/vnd.ms-excel
+- application/vnd.ms-powerpoint
+- application/msword
