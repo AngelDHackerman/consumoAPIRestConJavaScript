@@ -90,3 +90,12 @@ Son la forma en la que **el frontEnd le puede dar un aviso al backEnd** del tipo
 - POST            (Crea *nueva informacion* "posterar informacion en la Api)
 - PUT y PATCH     (*Editar* informacion ya creada, PUT edita todo, PATCH solo cosas pequeñas)
 - DELETE          (*Elimina* la informacion).
+
+
+## Headers HTTP: 
+
+- Content Type
+- Authorization 
+- Cookies 
+- Location 
+- Etc... 
