@@ -173,7 +173,7 @@ Son la forma en la que **el frontEnd le puede dar un aviso al backEnd** del tipo
 
 ## HTTP Clients: 
 
-- Axios*          // Axios es el cliente http mas popular junto con fetch
+- Axios*   (Axios es el cliente http mas popular junto con fetch, ver la documentacion de Axios)
 - Trae.js
 - node-fetch (para Node.js)
 - request (para Node.js)
