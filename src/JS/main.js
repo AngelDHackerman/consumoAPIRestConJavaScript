@@ -1,9 +1,6 @@
-// const API_URL = 'https://api.thecatapi.com/v1/images/search'; // * endpoint SIN query parameter 
+// api key: 2e0a73a6-4887-496f-bcb9-294a0e42b9d3
 
-// ? query parameter agregado:
-// ? api key: 2e0a73a6-4887-496f-bcb9-294a0e42b9d3
-
-      // ! llamando nuestras API y sus query parameters y endPoints
+      // ? llamando nuestras API y sus query parameters y endPoints
 
 const API_URL_RANDOM = 'https://api.thecatapi.com/v1/images/search?limit=2';
 const API_URL_FAVORITES = 'https://api.thecatapi.com/v1/favourites?search?limit=2';
@@ -11,6 +8,10 @@ const API_URL_FAVORITES = 'https://api.thecatapi.com/v1/favourites?search?limit=
       // ? API endPoint dinamico para hacer los deletes en favorites:
 
 const API_URL_FAVORITES_DELETE = (id) => `https://api.thecatapi.com/v1/favourites/${id}?search?limit=2`
+
+      // ? API endPoint para suber fotos de gatitos: 
+
+const API_URL_UPLOAD = 'https://api.thecatapi.com/v1/images/upload';
 
 
       // ! span para mensajes de error: 
@@ -146,7 +147,42 @@ const deleteFavoriteMichi = async (id) => {
 }
 
 
+      // ! Subiendo fotos de gatitos
+
+async function uploadMichiPhoto() { 
+  const form = document.getElementById('uploadingForm')
+  const formData = new FormData(form);
+
+  console.log(formData.get('file'));
+
+  const res = await fetch(API_URL_UPLOAD, { 
+    method: 'POST',
+    headers: { 
+      // 'Content-Type': 'multipart/form-data',
+      'X-API-KEY': '2e0a73a6-4887-496f-bcb9-294a0e42b9d3'
+    },
+    body: formData,     // ? FormData agrega automaticamente el Content-Type
+  });
+  const data = await res.json();
+
+  if (res.status !== 201) {
+    spanError.innerHTML = `Hubo un error al subir michi: ${res.status} ${data.message}`
+  }
+  else {
+      console.log("Foto de michi cargada :)");
+      console.log({ data });
+      console.log(data.url);
+      saveFavoriteMichi(data.id)
+  }
+};
+
+
+
+
       // ! Llamando a las funciones para que se ejecuten al cargar la pagina.
 
 loadRandomMichis();
 loadFavoritesMichis();
+
+
+
