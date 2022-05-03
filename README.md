@@ -213,5 +213,24 @@ Es la capacidad que tenemos de recordad la informacion que ya hemos traido en un
 - new Headers()
 - new Response()
 
+### sendBeacon 
+
+- No espera una respuesta del servidor
+- Es buena idea para analytics.
 
 
+### GraphQL 
+
+- Empowered clients.
+- All request on the same endpoint.
+
+
+### Web sockets 
+
+- Dejar el "tunel abierto".
+- Util para aplicaciones real-time (comunicacion "instantanea")
+
+
+### Web 3.0: 
+
+- Dapps: aplicaciones descentralizadas. 
