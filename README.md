@@ -180,6 +180,38 @@ Son la forma en la que **el frontEnd le puede dar un aviso al backEnd** del tipo
 - Etc...
 
 
+## Cors, cache, redirect 
+
+### Mode: 
+
+- cors
+- no-cors (opcion por defecto)
+- same-origin 
+
+
+### Cache: 
+
+Es la capacidad que tenemos de recordad la informacion que ya hemos traido en una solicitud anterior. **(Lo mejor es no utilizalo)**.
+
+- default
+- no-store
+- reload
+- no-cache
+- force-cache
+- only-if-cached
+
+### Redirect: 
+
+- follow 
+- error 
+- manual 
+
+
+### Fetch por dentro: 
+
+- new Request()
+- new Headers()
+- new Response()
 
 
 
