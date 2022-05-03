@@ -1,5 +1,13 @@
 // api key: 2e0a73a6-4887-496f-bcb9-294a0e42b9d3
 
+      // ? Instancia de Axios
+
+const api = axios.create({
+  baseURL: 'https://api.thecatapi.com/v1/'
+});
+
+api.defaults.headers.common['X-API-KEY'] = '2e0a73a6-4887-496f-bcb9-294a0e42b9d3';
+
       // ? llamando nuestras API y sus query parameters y endPoints
 
 const API_URL_RANDOM = 'https://api.thecatapi.com/v1/images/search?limit=2';
@@ -103,24 +111,21 @@ const  loadFavoritesMichis = async () => {
       // ! Asi se crea una solicitud de post, (para guardar en favoritos):
 
 const saveFavoriteMichi = async (id) => { 
-  const res = await fetch(API_URL_FAVORITES, {   
-    method: 'POST',
-    headers: { 
-      'Content-Type': 'application/json',
-      'X-API-KEY': '2e0a73a6-4887-496f-bcb9-294a0e42b9d3'
-    },
-    body: JSON.stringify({ 
-      image_id: id,
-    })
+
+      // todo: Ver la rama en git de 'sinAxios' para ver como se escribe sin axios
+      // ? Estas 3 lineas de abajo y las primeras de arriba son la magia de axios.
+
+  const {data, status} = await api.post('favourites', { 
+    image_id: id
   });
 
-  const data = await res.json(); // ? Aqui parseamos el objeto res a un JSON que podemos entender en el frontEnd.
+
 
   console.log('Save with POST');
-  console.log(res);
+  console.log(status);
 
-  if (res.status !== 200) { 
-    spanError.innerHTML = `hubo un error ${res.status} ${data.message}`
+  if (status !== 200) { 
+    spanError.innerHTML = `hubo un error ${status} ${data.message}`
   } else { 
     console.log('Michi guardado en favoritos')
     loadFavoritesMichis();
